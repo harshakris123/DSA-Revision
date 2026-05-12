@@ -1,5 +1,6 @@
 /*QUESTION:
-Given an array 'A' consisting of 'N' integers and an integer 'B', find the number of subarrays of array 'A' whose bitwise XOR of all elements is equal to 'B'.
+Given an array 'A' consisting of 'N' integers and an integer 'B', 
+find the number of subarrays of array 'A' whose bitwise XOR of all elements is equal to 'B'.
 
 Example:
 Input: 'N' = 4, 'B' = 2
@@ -15,7 +16,13 @@ To find the number of subarrays with bitwise XOR equal to B, we can use the tech
 4. Set the initial prefix XOR to 0 and set its count to 1 in the `xorCount` hashmap.
 5. Iterate through the array and update the prefix XOR by XOR-ing each element.
 6. Check if the current prefix XOR is equal to B. If it is, increment the `count` variable.
-7. Check if the XOR of the current prefix XOR with B exists in the `xorCount` hashmap. If it does, add the count of that XOR value to the `count` variable.
+7. Check if the XOR of the current prefix XOR with B exists in the `xorCount` hashmap.
+   If it does, add the count of that XOR value to the `count` variable.\
+//    
+   “Which previous prefix XOR do I need so that current XOR becomes b?”
+   subarray XOR = current_prefix_xor ^ previous_prefix_xor
+   previous_prefix_xor = current_prefix_xor ^ b
+// 
 8. Increment the count of the current prefix XOR in the `xorCount` hashmap.
 9. Finally, return the `count` variable as the number of subarrays with XOR equal to B.
 

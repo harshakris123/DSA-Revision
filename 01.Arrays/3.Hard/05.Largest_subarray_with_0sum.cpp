@@ -9,7 +9,14 @@ N = 8
 A[] = {15, -2, 2, -8, 1, 7, 10, 23}
 Output: 5
 Explanation: The largest subarray with a sum of 0 will be -2, 2, -8, 1, 7.
-
+// 
+If:
+prefixSum at i = X
+prefixSum at j = X
+Then:
+sum(i+1 → j) = X - X = 0
+That is the whole trick.
+//  
 APPROACH:
 To find the length of the largest subarray with a sum of 0, we can use a technique called prefix sum.
 1. Create a prefix sum array of the same size as the input array.
