@@ -11,7 +11,9 @@ Input: nums = [1]
 Output: [1]
 
 APPROACH:
-To find all elements that appear more than ⌊ n/3 ⌋ times, we can use the Boyer-Moore Majority Vote algorithm. This algorithm helps us find potential candidates that could appear more than ⌊ n/3 ⌋ times in a single pass. After finding the candidates, we count their occurrences and return the elements that meet the criteria.
+To find all elements that appear more than ⌊ n/3 ⌋ times, we can use the Boyer-Moore Majority Vote algorithm. 
+This algorithm helps us find potential candidates that could appear more than ⌊ n/3 ⌋ times in a single pass. 
+After finding the candidates, we count their occurrences and return the elements that meet the criteria.
 
 1. Initialize two candidate variables, c1 and c2, and their corresponding vote counters, vote1 and vote2.
 2. Iterate through the array:
@@ -20,6 +22,12 @@ To find all elements that appear more than ⌊ n/3 ⌋ times, we can use the Boy
    - Else if vote1 is 0, assign the current element to c1 and set vote1 to 1.
    - Else if vote2 is 0, assign the current element to c2 and set vote2 to 1.
    - Else, decrement both vote1 and vote2.
+//    Why does this make sense?
+Think of it as cancelling a group of 3 different elements:
+[1, 2, 5]
+Since all are different, none of them gains an advantage.
+If a true majority element exists (> n/3), it appears so many times that it cannot be completely cancelled out.
+// 
 3. After finding the potential candidates, count the occurrences of each candidate using cnt1 and cnt2.
 4. If cnt1 is greater than ⌊ n/3 ⌋, add c1 to the result vector.
 5. If cnt2 is greater than ⌊ n/3 ⌋ and c2 is different from c1, add c2 to the result vector.

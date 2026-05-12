@@ -10,7 +10,9 @@ Input: nums = [1,0,-1,0,-2,2], target = 0
 Output: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]
 
 APPROACH:
-To find the unique quadruplets that sum up to the target, we can use a similar approach as the threeSum problem. We will fix two elements (nums[a] and nums[b]) and use two pointers to find the remaining two elements (nums[c] and nums[d]) that sum up to the target.
+To find the unique quadruplets that sum up to the target, we can use a similar approach as the threeSum problem. 
+We will fix two elements (nums[a] and nums[b]) and use two pointers to find the remaining two elements (nums[c] and nums[d])
+that sum up to the target.
 
 1. Sort the input array nums in ascending order.
 2. Iterate through the array with two pointers: a and b.
