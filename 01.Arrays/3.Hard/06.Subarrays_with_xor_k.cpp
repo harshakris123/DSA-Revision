@@ -19,7 +19,7 @@ To find the number of subarrays with bitwise XOR equal to B, we can use the tech
 7. Check if the XOR of the current prefix XOR with B exists in the `xorCount` hashmap.
    If it does, add the count of that XOR value to the `count` variable.\
 //    
-   “Which previous prefix XOR do I need so that current XOR becomes b?”
+   “Which previous prefix XOR do I need so that current XOR becomes b?” 
    subarray XOR = current_prefix_xor ^ previous_prefix_xor
    previous_prefix_xor = current_prefix_xor ^ b
 // 

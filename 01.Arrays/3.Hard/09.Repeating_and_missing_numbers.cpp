@@ -1,6 +1,7 @@
 /*
 QUESTION:
-Given an unsorted array Arr of size N of positive integers. One number 'A' from set {1, 2,....,N} is missing and one number 'B' occurs twice in the array. Find these two numbers.
+Given an unsorted array Arr of size N of positive integers. 
+One number 'A' from set {1, 2,....,N} is missing and one number 'B' occurs twice in the array. Find these two numbers.
 
 Example:
 Input:
@@ -19,7 +20,13 @@ To find the missing and repeating numbers in the given unsorted array, we can ut
 5. Find the difference between the optimal sum of squares and the actual sum of squares: x2MinusY2 = opt2Sum - act2Sum.
 6. Calculate the sum of 'x' and 'y': xPlusY = x2MinusY2 / xMinusY.
 7. Calculate 'x' and 'y' using the equations: x = (xPlusY + xMinusY) / 2 and y = xPlusY - x.
-
+// 
+Expected Sum - Missing + Repeating
+actSum = optSum - x + y
+x - y = optSum - actSum //x - y = optSum - actSum
+x² - y² = opt2Sum - act2Sum
+x² - y² = (x-y)(x+y)
+x+y = (x²-y²)/(x-y
 CODE:
 */
 

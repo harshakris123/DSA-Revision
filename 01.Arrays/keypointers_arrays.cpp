@@ -1,0 +1,1 @@
+question number 10,11 in hard are to be done
