@@ -1,6 +1,7 @@
 /*
 QUESTION:
-Given an ascending sorted rotated array Arr of distinct integers of size N. The array is right rotated K times. Find the value of K.
+Given an ascending sorted rotated array Arr of distinct integers of size N. The array is right rotated K times.
+Find the value of K.
 
 Example 1:
 

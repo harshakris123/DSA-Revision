@@ -29,7 +29,7 @@ Explanation: The element 20 is not present in the matrix.
 APPROACH:
 We can start the search from the top-right element or the bottom-left element and move towards the target element based on the properties of the matrix.
 
-1. Initialize the current position to the top-right element (row = 0, col = n-1), where n is the number of columns in the matrix.
+1. Initialize the current position to the top-right element (row = 0, col = m-1), where m is the number of columns in the matrix.
 2. While the current position is within the matrix boundaries:
      - If the current element is equal to the target, return true.
      - If the current element is greater than the target, move left to the previous column.

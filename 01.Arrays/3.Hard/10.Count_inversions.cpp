@@ -1,8 +1,10 @@
 /*
 QUESTION:
-Given an array of integers. Find the Inversion Count in the array.
+Given an array of integers. 
+Find the Inversion Count in the array.
 
-Inversion Count: For an array, inversion count indicates how far (or close) the array is from being sorted. If the array is already sorted then the inversion count is 0. If an array is sorted in the reverse order then the inversion count is the maximum. 
+Inversion Count: For an array, inversion count indicates how far (or close) the array is from being sorted.
+If the array is already sorted then the inversion count is 0. If an array is sorted in the reverse order then the inversion count is the maximum. 
 Formally, two elements a[i] and a[j] form an inversion if a[i] > a[j] and i < j.
 
 Example 1:
@@ -16,7 +18,9 @@ Output: 0
 Explanation: As the sequence is already sorted, there is no inversion count.
 
 APPROACH:
-To find the inversion count in the array, we can utilize the merge sort algorithm. The idea is to divide the array into two halves, recursively count the inversions in each half, and then merge the two halves while counting the inversions across them.
+To find the inversion count in the array, we can utilize the merge sort algorithm.
+The idea is to divide the array into two halves, recursively count the inversions in each half, 
+and then merge the two halves while counting the inversions across them.
 
 CODE:
 */

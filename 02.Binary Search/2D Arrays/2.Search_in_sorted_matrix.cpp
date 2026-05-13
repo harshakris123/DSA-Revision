@@ -1,6 +1,6 @@
 /*
 QUESTION:-
-You are given an m x n integer matrix matrix with the following two properties:
+You are given an m x n integer matrix with the following two properties:
 
 Each row is sorted in non-decreasing order.
 The first integer of each row is greater than the last integer of the previous row.
@@ -21,7 +21,7 @@ Output: true
 /*
 APPROACH:-
 -> Since the array is sorted we can use binary search low = 0 and high = n*m-1 i.e. total number of elements
--> Value at mid position could be accessed by matrix[mid/m][mid%m]
+-> Value at mid position could be accessed by matrix[mid/m][mid%m] (row, column)
 -> Then, follow the traditional binary search
 */
 

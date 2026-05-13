@@ -1,6 +1,7 @@
 /*
 QUESTION:-
-Given a boolean 2D array of n x m dimensions where each row is sorted. Find the 0-based index of the first row that has the maximum number of 1's.
+Given a boolean 2D array of n x m dimensions where each row is sorted. 
+Find the 0-based index of the first row that has the maximum number of 1's.
 
 Example 1:
 
@@ -27,14 +28,22 @@ out of matrix  *{*1,  1,  1,  1} ---> ans
                 {0,  0,  0,  0}
 
 
-
+| Position | Value | Action | ans |
+| -------- | ----- | ------ | --- |
+| (0,3)    | 1     | left   | 0   |
+| (0,2)    | 1     | left   | 0   |
+| (0,1)    | 1     | left   | 0   |
+| (0,0)    | 0     | down   | 0   |
+| (1,0)    | 0     | down   | 0   |
+| (2,0)    | 1     | left   | 2   |
+Answer = 2| 
 */
 
 // CODE:-
 int rowWithMax1s(vector<vector<int>> arr, int n, int m)
 {
-    int j = m - 1;
-    int i = 0;
+    int i = 0;       // first row
+    int j = m-1;     // last column
     int ans = -1;
     while (j >= 0 && i < n)
     {
