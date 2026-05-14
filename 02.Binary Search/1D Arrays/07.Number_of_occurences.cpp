@@ -29,7 +29,7 @@ CODE:
 
 int countOccurrences(int arr[], int n, int x) {
     int first = lower_bound(arr, arr + n, x) - arr;
-    if (first == n || arr[first] != x)
+    if (first == n || arr[first] != x)  
         return 0;
     int last = upper_bound(arr, arr + n, x) - arr;
     return last - first;

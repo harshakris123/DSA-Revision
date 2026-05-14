@@ -1,6 +1,13 @@
 /*
 Question:
-In the universe Earth C-137, Rick discovered a special form of magnetic force between two balls if they are put in his new invented basket. Rick has n empty baskets, the ith basket is at position[i], Morty has m balls and needs to distribute the balls into the baskets such that the minimum magnetic force between any two balls is maximum.
+Given an array nums of size n, which denotes the positions of stalls, and an integer k, which denotes the number of aggressive cows, 
+assign stalls to k cows such that the minimum distance between any two cows is the maximum possible. 
+Find the maximum possible minimum distance.
+
+In the universe Earth C-137, Rick discovered a special form of magnetic force between two balls if they are 
+put in his new invented basket. Rick has n empty baskets, the ith basket is at position[i], 
+Morty has m balls and needs to distribute the balls into the baskets such that the minimum magnetic force 
+between any two balls is maximum.
 
 Rick stated that magnetic force between two different balls at positions x and y is |x - y|.
 
@@ -10,7 +17,8 @@ Example:
 
 Input: position = [1,2,3,4,7], m = 3
 Output: 3
-Explanation: Distributing the 3 balls into baskets 1, 4 and 7 will make the magnetic force between ball pairs [3, 3, 6]. The minimum magnetic force is 3. We cannot achieve a larger minimum magnetic force than 3.
+Explanation: Distributing the 3 balls into baskets 1, 4 and 7 will make the magnetic force between ball pairs 
+[3, 3, 6]. The minimum magnetic force is 3. We cannot achieve a larger minimum magnetic force than 3.
 
 Approach:
 - Sort the position array in ascending order to simplify the possibility check.
@@ -22,6 +30,7 @@ Approach:
 - If it is not possible, set the high value to mid - 1.
 - Return the answer.
 
+Key idea : We are not searching positions, we are searching the minimum distance (force) possible.
 Code:
 */
 

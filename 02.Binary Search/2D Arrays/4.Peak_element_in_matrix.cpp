@@ -23,7 +23,7 @@ APPROACH:
 - Find the maximum element in each row and check if it is a peak element by comparing it with its adjacent elements.
 - If it is a peak element, return its position [i, j].
 
-TIME COMPLEXITY: O(m log(n)) or O(n log(m)) - Binary search is performed on the columns of the matrix.
+TIME COMPLEXITY: O(m log(n)) or O(n log(m)) - Binary search is performed on the rows of the matrix.
 SPACE COMPLEXITY: O(1) - Constant space is used.
 
 CODE:
