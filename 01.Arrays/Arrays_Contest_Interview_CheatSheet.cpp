@@ -45,6 +45,9 @@ prefixSum - k
 */
 
 // Count subarrays with sum K
+// prefix = current sum till now
+// prefix - old_prefix = k
+// old_prefix = prefix - k
 int subarraySum(vector<int>& nums, int k){
     unordered_map<int,int> mp;
 
@@ -113,18 +116,18 @@ majority element > n/3
 also refer question number hard Q2 : "Majority Element II" for n/3 case
 */
 int majorityElement(vector<int>& nums) {
-    int cnt = 0, ele = 0;
+    int vote = 0, ele = 0;
     for(int x : nums){
-        if(cnt == 0){
+        if(vote == 0){
             ele = x;
-            cnt = 1;
+            vote = 1;
         }
         else if(x == ele)
-            cnt++;
+            vote++;
         else
-            cnt--;
+            vote--;
     }
-    cnt = 0;
+    int cnt = 0;
     for(int x : nums){
         if(x == ele)
             cnt++;
