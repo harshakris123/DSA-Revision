@@ -43,7 +43,7 @@ bool isPossible(int mid, int A[], int N, int M) {
         } else {
             pos_m++;
             if (A[i] > mid)
-                return false;
+                return false;   
             temp = A[i];
         }
     }
@@ -58,7 +58,7 @@ int findPages(int A[], int N, int M) {
     int low = INT_MAX, high = 0;
     int ans = -1;
     for (int i = 0; i < N; i++) {
-        low = min(low, A[i]);
+        low = max(low, A[i]);
         high += A[i];
     }
     while (low <= high) {

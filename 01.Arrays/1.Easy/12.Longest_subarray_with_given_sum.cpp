@@ -1,6 +1,7 @@
 /*
 QUESTION:-
-You are given an array 'A' of size 'N' and an integer 'K'. You need to print the length of the longest subarray of array 'A' whose sum = 'K'.
+You are given an array 'A' of size 'N' and an integer 'K'. 
+You need to print the length of the longest subarray of array 'A' whose sum = 'K'.
 Example:
 Input: 'N' = 7 'K' = 3
 'A' = [1, 2, 3, 1, 1, 1, 1]

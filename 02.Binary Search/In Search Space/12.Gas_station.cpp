@@ -1,6 +1,9 @@
 /*
 Questions:-
-We have an horizontal number line. On that number line, we have gas stations at positions stations[0], stations[1], ..., stations[N-1], where N = size of the stations array. Now, we add K more gas stations so that D, the maximum distance between adjacent gas stations, is minimized. We have to find the smallest possible value of D. Find the answer exactly to 2 decimal places.
+We have an horizontal number line. On that number line, we have gas stations at positions stations[0], 
+stations[1], ..., stations[N-1], where N = size of the stations array. Now, we add K more gas stations 
+so that D, the maximum distance between adjacent gas stations, is minimized. We have to find the smallest 
+possible value of D. Find the answer exactly to 2 decimal places.
 
 Example 1:
 
@@ -34,6 +37,7 @@ Time Complexity: O(N log M), where N is the number of existing gas stations and 
 Space Complexity: O(1), as we are using constant extra space.
 */
 
+/*“Can I make every adjacent gap ≤ 2 using at most K stations?”*/
 bool isPossible(double mid, vector<int>& stations, int K) {
     int req_stations = 0;
     for (int i = 1; i < stations.size(); i++) {

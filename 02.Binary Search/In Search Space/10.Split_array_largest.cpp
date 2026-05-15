@@ -1,10 +1,12 @@
 /*
-Question: Given an integer array nums and an integer k, split nums into k non-empty subarrays such that the largest sum of any subarray is minimized. Return the minimized largest sum of the split.
+Question: Given an integer array nums and an integer k, split nums into k non-empty subarrays 
+such that the largest sum of any subarray is minimized. Return the minimized largest sum of the split.
 
 Example:
 Input: nums = [7,2,5,10,8], k = 2
 Output: 18
-Explanation: There are four ways to split nums into two subarrays. The best way is to split it into [7,2,5] and [10,8], where the largest sum among the two subarrays is only 18.
+Explanation: There are four ways to split nums into two subarrays. 
+The best way is to split it into [7,2,5] and [10,8], where the largest sum among the two subarrays is only 18.
 
 Approach:
 - The problem can be solved using the binary search algorithm.
@@ -20,6 +22,8 @@ Approach:
 
 Time Complexity: O(n * log(sum of array))
 Space Complexity: O(1)
+Greedy tells us the minimum partitions needed. 
+If minimum needed ≤ k, we can always split further to make exactly k.
 */
 
 bool isPossible(int mid, vector<int>& nums, int k) {
@@ -29,8 +33,6 @@ bool isPossible(int mid, vector<int>& nums, int k) {
             temp += it;
         } else {
             pos_parts++;
-            if (it > mid)
-                return false;
             temp = it;
         }
     }
@@ -43,7 +45,7 @@ int splitArray(vector<int>& nums, int k) {
     int low = INT_MAX, high = 0;
     int ans = -1;
     for (auto it : nums) {
-        low = min(low, it);
+        low = max(low, it);
         high += it;
     }
     while (low <= high) {
