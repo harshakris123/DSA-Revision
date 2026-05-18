@@ -1,0 +1,149 @@
+    Yes — **for placements now, don’t revise sequentially. Revise by ROI**.
+
+Since you’re already done with **Arrays + Binary Search**, I’d prioritize based on **frequency in OAs + interviews + pattern value** (especially for companies like Goldman, product companies, top OAs).
+
+## High ROI Revision Order
+### Tier 1 — Highest ROI (Do first)
+These appear **everywhere**.
+### 1. Graphs ⭐⭐⭐⭐⭐
+**Do this ASAP**
+Why:
+* High interview frequency
+* Pattern-heavy
+* Revision decays fast
+Focus:
+* BFS/DFS
+* Topological sort
+* Cycle detection
+* Bipartite
+* Shortest path
+* Dijkstra
+* Union Find (DSU)
+* MST basics
+* Grid problems
+Must recognize:
+> “This is secretly BFS/DFS.”
+---
+### 2. Sliding Window ⭐⭐⭐⭐⭐
+Very high OA ROI.
+Focus:
+* Fixed window
+* Variable window
+* HashMap + window
+* Longest/shortest substring patterns
+These are free marks if pattern recognition is strong.
+---
+## 3. Trees + BST ⭐⭐⭐⭐⭐
+Super frequent.
+#### Binary Trees
+Focus:
+* Traversals
+* Diameter
+* Height
+* LCA
+* Path Sum
+* Views
+* Level order
+* 
+#### BST
+Focus:
+* Valid BST
+* Kth smallest
+* Insert/delete
+* LCA BST
+* Iterator
+---
+### 4. Heaps ⭐⭐⭐⭐⭐
+Massive OA ROI.
+Focus:
+* Top K
+* Kth largest/smallest
+* Merge K lists
+* Priority queue greedy
+* Two heaps
+* Median problems
+Very common in Goldman/OAs.
+---
+### 5. Greedy ⭐⭐⭐⭐
+Quick revision, high returns.
+Pattern recognition matters more than brute force.
+---
+## Tier 2 — Important
+### 6. Stack & Queue ⭐⭐⭐⭐
+Especially:
+* Monotonic stack
+* Next greater
+* Histogram
+* Valid parenthesis
+* Min stack
+---
+### 7. Linked List ⭐⭐⭐⭐
+Fast revision.
+Mostly:
+* Reverse
+* Detect cycle
+* Merge
+* Fast/slow pointer
+* LRU intuition
+---
+### 8. DP ⭐⭐⭐⭐
+Don’t overdo.
+For placements:
+Focus on:
+* 1D DP
+* Knapsack
+* LIS
+* Grid DP
+* Subsequence
+* Take/not take
+Don’t spend weeks on hard DP.
+---
+## Tier 3 — Moderate ROI
+### 9. Strings ⭐⭐⭐
+Hashing, frequency, palindrome, parsing.
+---
+### 10. Recursion + Backtracking ⭐⭐⭐
+Subset/permutation/NQueens basics.
+---
+### 11. Bit Manipulation ⭐⭐⭐
+Easy ROI.
+Do:
+* XOR tricks
+* Power of 2
+* Single number
+* Bit masking basics
+---
+### 12. Tries ⭐⭐
+Low frequency.
+Do only basics.
+---
+### 13. Strings (Hard) ⭐⭐
+Later.
+---
+## Your Revision Order (optimized)
+You already did:
+✅ Arrays
+✅ Binary Search
+Now go:
+**Graphs → Sliding Window → Trees → BST → Heaps → Greedy → Stack/Queue → Linked List → DP → Strings → Recursion → Bit → Trie → Hard Strings**
+### Why this order?
+Because if placements suddenly start, after first 7–8 topics your interview readiness is already quite strong.
+**80/20 principle:**
+The first 8 topics give you ~80% of interview coverage.
+### Suggested pace for you
+Since you're doing:
+**2 company questions + LC daily**
+Do:
+**1 revision topic every 2–3 days**
+Example:
+* Day 1–3: Graphs
+* Day 4–5: Sliding Window
+* Day 6–8: Trees
+* Day 9: BST
+* Day 10–11: Heaps
+
+Don’t do deep relearning.
+Goal is:
+> “Pattern recall speed”
+not
+> “I remember every trick problem.”
