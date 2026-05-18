@@ -1,11 +1,14 @@
 /*
 Question:
-Given the adjacency matrix representation of an undirected graph, your task is to return the adjacency list of the graph where each adjacency list contains the vertex itself at the first position and then all its adjacent nodes.
+Given the adjacency matrix representation of an undirected graph, 
+your task is to return the adjacency list of the graph where each adjacency list contains
+the vertex itself at the first position and then all its adjacent nodes.
 
 Explanation:
 - We initialize an empty adjacency list vector of vectors.
 - For each vertex in the graph, we add the vertex itself as the first element of its adjacency list.
-- Then, for each edge (u, v) in the graph, we add v to the adjacency list of u and u to the adjacency list of v.
+- Then, for each edge (u, v) in the graph, we add v to the adjacency list of u and u to the adjacency list 
+of v.
 - Finally, we return the adjacency list.
 
 Time Complexity:

@@ -1,6 +1,7 @@
 /*
 Question:
-Given a connected undirected graph, perform Depth First Traversal (DFS) of the graph starting from vertex 0 and visit all the nodes directly or indirectly connected to Node 0.
+Given a connected undirected graph, perform Depth First Traversal (DFS) of the graph starting from vertex 0
+and visit all the nodes directly or indirectly connected to Node 0.
 
 Explanation:
 - We initialize an empty vector 'ans' to store the DFS traversal.
