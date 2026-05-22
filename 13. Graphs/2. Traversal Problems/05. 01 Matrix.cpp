@@ -1,14 +1,16 @@
 /*
 QUESTION:-
-Given an m x n binary matrix mat, return the distance of the nearest 0 for each cell.
-
+Given an m x n binary matrix mat, return the distance of the nearest 0 for each cell.n 
 The distance between two adjacent cells is 1.
 
 APPROACH:
 - We can use a Breadth-First Search (BFS) traversal to find the distance of the nearest 0 for each cell.
 - First, we initialize the distance matrix with -1 for all cells.
-- Then, we iterate through the matrix and find all cells with the value 0. For each 0 cell found, we add it to the queue and set its distance to 0 in the distance matrix.
-- Next, we perform a BFS starting from the cells with 0. During the BFS, we update the distance of each cell from the nearest 0 cell and continue the BFS until all cells are visited.
+- Then, we iterate through the matrix and find all cells with the value 0. For each 0 cell found, we add it
+to the queue and set its distance to 0 in the distance matrix.
+- Next, we perform a BFS starting from the cells with 0. During the BFS, 
+we update the distance of each cell from the nearest 0 cell and continue the BFS until all cells are 
+visited.
 - Finally, we return the distance matrix.
 
 COMPLEXITY ANALYSIS:

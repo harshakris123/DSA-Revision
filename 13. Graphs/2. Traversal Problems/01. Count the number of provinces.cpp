@@ -1,6 +1,7 @@
 /*
 Question:
-Given an n x n matrix 'isConnected' representing connections between cities (nodes), find the total number of provinces in the graph.
+Given an n x n matrix 'isConnected' representing connections between cities (nodes), 
+find the total number of provinces in the graph.
 
 Explanation:
 - The problem can be solved using Depth First Search (DFS).

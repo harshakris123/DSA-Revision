@@ -2,16 +2,22 @@
 QUESTION:-
 You are given an m x n binary matrix grid, where 0 represents a sea cell and 1 represents a land cell.
 
-A move consists of walking from one land cell to another adjacent (4-directionally) land cell or walking off the boundary of the grid.
+A move consists of walking from one land cell to another adjacent (4-directionally) 
+land cell or walking off the boundary of the grid.
 
-Return the number of land cells in grid for which we cannot walk off the boundary of the grid in any number of moves.
+Return the number of land cells in grid for which we cannot walk off the boundary of the grid in any 
+number of moves.
 
 APPROACH:
-- We can use Depth-First Search (DFS) to mark all land cells connected to the boundary of the grid as uncountable (i.e., cells that we can walk off the boundary).
+- We can use Depth-First Search (DFS) to mark all land cells connected to the boundary of the grid 
+as uncountable (i.e., cells that we can walk off the boundary).
 - First, we initialize a copy of the grid called 'vis' to store the visited status of each cell.
-- Then, we perform DFS from all land cells located at the boundary of the grid. During the DFS, we mark all connected land cells as visited by changing their value to -1 in the 'vis' matrix.
-- After performing DFS from boundary cells, all remaining land cells in the 'vis' matrix represent cells that we cannot walk off the boundary of the grid.
+- Then, we perform DFS from all land cells located at the boundary of the grid. During the DFS, 
+we mark all connected land cells as visited by changing their value to -1 in the 'vis' matrix.
+- After performing DFS from boundary cells, all remaining land cells in the 'vis' matrix represent cells 
+that we cannot walk off the boundary of the grid.
 - Finally, we count the number of land cells in the 'vis' matrix and return the count as the result.
+//  similar to surrounded regions problem, we mark all 'O's connected to boundary as visited and count remaining 'O's
 
 COMPLEXITY ANALYSIS:
 - Time Complexity: O(m * n), where m is the number of rows and n is the number of columns in the matrix. In the worst case, we may need to visit all the cells of the matrix during DFS.

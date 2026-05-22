@@ -1,13 +1,17 @@
 /*
 QUESTION:
-Given a Directed Graph with V vertices (Numbered from 0 to V-1) and E edges, check whether it contains any cycle or not.
+Given a Directed Graph with V vertices (Numbered from 0 to V-1) and E edges, .
+check whether it contains any cycle or not.
 
 APPROACH:
 - We can use Topological Sorting to check if a directed graph contains a cycle or not.
 - If a directed graph is a DAG (Directed Acyclic Graph), it means it does not contain any cycle.
-- So, to check for a cycle, we perform a variation of Topological Sorting using Kahn's algorithm, which is based on the concept of indegree.
-- If there is no cycle in the graph, we can always find a node with an indegree of 0 (no incoming edges) and remove it along with its outgoing edges.
-- We keep repeating this process, and if at any point we are unable to find a node with an indegree of 0, it means there is a cycle in the graph.
+- So, to check for a cycle, we perform a variation of Topological Sorting using Kahn's algorithm, 
+which is based on the concept of indegree.
+- If there is no cycle in the graph, we can always find a node with an indegree of 0 (no incoming edges) 
+and remove it along with its outgoing edges.
+- We keep repeating this process, and if at any point we are unable to find a node with an indegree of 0, 
+it means there is a cycle in the graph.
 
 COMPLEXITY ANALYSIS:
 - Time Complexity: O(V + E), where V is the number of vertices (nodes) and E is the number of edges in the graph. We perform a BFS-like traversal of all nodes and edges.
