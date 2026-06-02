@@ -25,44 +25,50 @@ Terminal nodes (outdegree 0) are initially safe, and we iteratively reduce the o
 Any node whose outdegree becomes 0 is also safe. Nodes in cycles never reach outdegree 0, so they are excluded.
 */
 
-vector<int> eventualSafeNodes(vector<vector<int>>& graph) {
-    int n = graph.size();
-    // Creating reverse adjacency list and outdegree array
-    vector<int> revadj[n];
-    vector<int> outdeg(n);
-
-    for (int i = 0; i < n; i++) {
-        outdeg[i] += graph[i].size();
-        for (auto j : graph[i]) {
-            revadj[j].push_back(i);
-        }
-    }
-
-    queue<int> q;
-    for (int i = 0; i < n; i++) {
-        if (outdeg[i] == 0) q.push(i);
-    }
-
-    vector<int> ans;
-
-    while (!q.empty()) {
-        int siz = q.size();
-        while (siz--) {
-            int node = q.front();
-            q.pop();
-            ans.push_back(node);
-
-            // Reduce outdegree of the nodes from which there is a directed edge to the current node
-            for (auto v : revadj[node]) {
-                outdeg[v]--;
-                if (outdeg[v] == 0) {
-                    q.push(v);
+class Solution{
+private:
+    bool dfscheck(int node, vector<int> adj[], int vis[], int pathvis[], int check[])
+    {
+        vis[node] = 1;
+        pathvis[node] = 1;
+        for(auto it : adj[node])
+        {
+            if(!vis[it])
+            {
+                if(dfscheck(it, adj, vis, pathvis,check))
+                {
+                    check[node] =0;
+                    return true;
                 }
+            }else if(pathvis[it] == 1)
+            {
+                check[node] = 0;
+                return true;
             }
         }
+        check[node] =1;
+        pathvis[node] = 0;
+        return false;
     }
+public:
+ vector<int> eventualSafeNodes(int V, vector<int> adj[]){
+        int vis[V] = {0};
+        int pathvis[V] = {0};
+        int  check[V] = {0};
+        vector<int> safe;
 
-    // Sort the safe nodes in ascending order
-    sort(ans.begin(), ans.end());
-    return ans;
-}
+        for(int i=0; i<V; i++)
+        {
+            if(!vis[i])
+            {
+                dfscheck(i, adj, vis, pathvis, check);
+            }
+        }
+
+        for(int i=0; i<V; i++)
+        {
+            if(check[i] == 1) safe.push_back(i);
+        }
+        return safe;
+    }
+};

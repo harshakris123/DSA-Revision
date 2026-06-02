@@ -185,6 +185,7 @@ int findMinInRotatedSortedArray(const vector<int>& nums) {
 
 // 10) Find single element in sorted array (every other element appears twice)
 int singleNonDuplicate(const vector<int>& nums) {
+    if(nums.size() == 1) return nums[0];
     int low = 0, high = (int)nums.size() - 1;
     while (low < high) {
         int mid = low + (high - low) / 2;
@@ -214,23 +215,22 @@ SECTION 2: 2D ARRAY PROBLEMS
 */
 
 // 1) Row with maximum number of 1's
-int rowWithMaximumOnes(const vector<vector<int>>& mat) {
-    int n = mat.size();
-    if (n == 0) return -1;
-    int m = mat[0].size();
-    int bestRow = -1;
-    int maxOnes = 0;
-
-    for (int i = 0; i < n; i++) {
-        // if each row is sorted, lower_bound on 1 gives first 1
-        int firstOne = lowerBoundBS(mat[i], 1);
-        int ones = m - firstOne;
-        if (ones > maxOnes) {
-            maxOnes = ones;
-            bestRow = i;
+int rowWithMax1s(vector<vector<int>> arr, int n, int m)
+{
+    int i = 0;       // first row
+    int j = m-1;     // last column
+    int ans = -1;
+    while (j >= 0 && i < n)
+    {
+        while (arr[i][j] == 1)
+        {
+            ans = i;
+            j--;
         }
+        if (i < n)
+            i++;
     }
-    return bestRow;
+    return ans;
 }
 
 // 2) Search in sorted matrix (matrix treated as a flattened sorted array)
@@ -252,21 +252,15 @@ bool searchInSortedMatrix(const vector<vector<int>>& mat, int target) {
 }
 
 // 3) Search in row-wise sorted matrix
-bool searchInRowWiseSortedMatrix(const vector<vector<int>>& mat, int target) {
-    int n = mat.size();
-    if (n == 0) return false;
-    int m = mat[0].size();
-
-    for (int i = 0; i < n; i++) {
-        if (mat[i][0] <= target && target <= mat[i][m - 1]) {
-            int low = 0, high = m - 1;
-            while (low <= high) {
-                int mid = low + (high - low) / 2;
-                if (mat[i][mid] == target) return true;
-                if (mat[i][mid] < target) low = mid + 1;
-                else high = mid - 1;
-            }
-        }
+bool searchMatrix(vector<vector<int>>& matrix, int target) {
+    int row = 0, col = matrix[0].size() - 1;
+    while (row < matrix.size() && col >= 0) {
+        if (matrix[row][col] == target)
+            return true;
+        else if (matrix[row][col] > target)
+            col--;
+        else
+            row++;
     }
     return false;
 }
@@ -274,32 +268,36 @@ bool searchInRowWiseSortedMatrix(const vector<vector<int>>& mat, int target) {
 // 4) Peak element in matrix
 // A peak is an element greater than or equal to its neighbors (up/down/left/right)
 // This implementation finds a peak by binary searching columns.
-vector<int> findPeakElementInMatrix(const vector<vector<int>>& mat) {
+int max_finder(vector<int>& row) {
+    int maxi = INT_MIN;
+    int ans = -1;
+    for (int i = 0; i < row.size(); i++) {
+        if (row[i] > maxi) {
+            maxi = row[i];
+            ans = i;
+        }
+    }
+    return ans;
+}
+vector<int> findPeakGrid(vector<vector<int>>& mat) {
     int n = mat.size();
-    int m = mat[0].size();
-    int low = 0, high = m - 1;
-
+    int low = 0, high = n - 1;
     while (low <= high) {
         int mid = low + (high - low) / 2;
-
-        int maxRow = 0;
-        for (int i = 1; i < n; i++) {
-            if (mat[i][mid] > mat[maxRow][mid]) maxRow = i;
-        }
-
-        int left = (mid - 1 >= 0) ? mat[maxRow][mid - 1] : -1;
-        int right = (mid + 1 < m) ? mat[maxRow][mid + 1] : -1;
-
-        if (mat[maxRow][mid] >= left && mat[maxRow][mid] >= right) {
-            return {maxRow, mid};
-        } else if (right > mat[maxRow][mid]) {
-            low = mid + 1;
-        } else {
-            high = mid - 1;
+        int col = max_finder(mat[mid]);
+        if ((mid == 0 || mat[mid][col] > mat[mid - 1][col]) && 
+            (mid == n - 1 || mat[mid][col] > mat[mid + 1][col]))
+            return {mid, col};
+        else {
+            if (mid != 0 && mat[mid][col] < mat[mid - 1][col])
+                high = mid - 1;
+            else
+                low = mid + 1;
         }
     }
     return {-1, -1};
 }
+
 
 // 5) Matrix median
 // Assumes each row is sorted.

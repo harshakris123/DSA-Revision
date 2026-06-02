@@ -31,7 +31,7 @@ vector<int> topologicalSort(vector<vector<int>>& graph, int edges, int nodes) {
     }
     vector<bool> vis(nodes);
     vector<int> ans;
-    for(int i = 0; i < nodes; i++){
+    for(int i = 0; i < nod  es; i++){
         if(!vis[i]){
             dfs(i, adj, vis, ans);
         }
