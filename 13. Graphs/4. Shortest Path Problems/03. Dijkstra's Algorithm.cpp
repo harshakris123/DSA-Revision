@@ -15,24 +15,44 @@ COMPLEXITY ANALYSIS:
 - Space Complexity: O(V + E), where V is the number of vertices and E is the number of edges in the graph. We use additional space for the adjacency list, the distance array, and the priority queue.
 */
 
-vector<int> dijkstra(int n, vector<vector<int>> adj[], int s){
-    vector<int> dis(n, 1e9);
-    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+#define P pair<int,int>
 
-    dis[s] = 0;
-    pq.push({0, s});
+class Solution{
+public:
+    vector<int> dijkstra(int V, vector<vector<int>> edges, int S) {
+        priority_queue<P, vector<P>, greater<P>> pq;
+         vector<vector<vector<int>>> adj(V);
+        for(auto &e : edges) {
+            int u = e[0];
+            int v = e[1];
+            int wt = e[2];
+            
+            adj[u].push_back({v, wt});
+            adj[v].push_back({u, wt}); // assuming undirected graph
+        }
+               
+        vector<int> dist(V, 1e9);
+        dist[S] = 0;
+        pq.push({0,S});
 
-    while(!pq.empty()){
-        int u = pq.top().second;
-        pq.pop();
-        for(auto p : adj[u]){
-            int v = p[0], wt = p[1]; 
-            if(dis[u] + wt < dis[v]){
-                dis[v] = dis[u] + wt;
-                pq.push({dis[v], v});
+        while(!pq.empty())
+        {
+            int dis = pq.top().first;
+            int node = pq.top().second;
+            pq.pop();
+
+            for(auto it : adj[node])
+            {
+                int adjnode = it[0];
+                int wt = it[1];
+
+                if(dis + wt < dist[adjnode])
+                {
+                    dist[adjnode] = dis + wt;
+                    pq.push({dist[adjnode], adjnode});
+                }
             }
         }
+        return dist;
     }
-
-    return dis;
-}
+};
